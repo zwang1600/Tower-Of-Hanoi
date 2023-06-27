@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+# Partnership? YES
+# Submitting partner: Charlie Norgaard
+# Other partner: Zuo Wang
 from typing import Tuple, Callable, List
 
 import toh_mdp as tm
@@ -98,7 +101,7 @@ x
     # *** BEGIN OF YOUR CODE ***
     sample = float("-inf")
     for a in mdp.actions:
-        if (next_state, a) in q_table: 
+        if (next_state, a) in q_table:
             sample = max(sample, q_table[(next_state, a)])
         else:
             sample = max(sample, 0)
@@ -125,9 +128,9 @@ def extract_v_table(mdp: tm.TohMdp, q_table: tm.QTable) -> tm.VTable:
             v_table[state] = max(v_table[state], val)
         else:
             v_table[state] = val
-    
+
     return v_table
-    
+
 
 
 def choose_next_action(
@@ -161,6 +164,12 @@ def choose_next_action(
             The chosen action.
     """
     # *** BEGIN OF YOUR CODE ***
+    q_values = {}
+    for action in mdp.actions:
+        q_values[action] = q_table.get((state, action), 0)
+    max_q = max(q_values.values())
+    best_actions = [a for a, q in q_values.items() if q == max_q]
+    return epsilon_greedy(best_actions, epsilon)
 
 
 def custom_epsilon(n_step: int) -> float:
@@ -176,6 +185,8 @@ def custom_epsilon(n_step: int) -> float:
             epsilon value when choosing the nth step.
     """
     # *** BEGIN OF YOUR CODE ***
+    epsilon = 1 / (1 + n_step * 0.001)
+    return epsilon
 
 
 def custom_alpha(n_step: int) -> float:
