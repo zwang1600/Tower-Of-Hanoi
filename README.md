@@ -1,9 +1,9 @@
 ## What is in this repo?
-This project is an implementation of the solved version of the gam [Tower of Hanoi](https://en.wikipedia.org/wiki/Tower_of_Hanoi). The interactions between a problem-solving agent and its problem-domain environment are modeled probabilistically using the technique of [Markov Decision Processes](https://en.wikipedia.org/wiki/Markov_decision_process). Two approaches are used to maximize the expected utility: [Value Iteration](https://en.wikipedia.org/wiki/Markov_decision_process#Value_iteration) and [Q-learning](https://en.wikipedia.org/wiki/Q-learning).
+This project is an implementation of the solved version of the game [Tower of Hanoi](https://en.wikipedia.org/wiki/Tower_of_Hanoi). The interactions between a problem-solving agent and its problem-domain environment are modeled probabilistically using the technique of [Markov Decision Processes](https://en.wikipedia.org/wiki/Markov_decision_process). Two approaches are used to maximize the expected utility: [Value Iteration](https://en.wikipedia.org/wiki/Markov_decision_process#Value_iteration) and [Q-learning](https://en.wikipedia.org/wiki/Q-learning).
 
 
 ## Value Iteration
-$$V_{i+1}(s)=\max_{a}\sum _{s'}T_{a}(s,s')[R_{a}(s,s')+\gamma V_{i}(s')]$$
+![V_{i+1}(s)=\max_{a}\sum _{s'}T_{a}(s,s')[R_{a}(s,s')+\gamma V_{i}(s')]](http://www.sciweavers.org/tex2img.php?eq=1%2Bsin%28mc%5E2%29&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=)
 In value iteration, the agent knows the parameters of the MDP (especially the transition model $T$ and the reward function $R$).
 
 ## Q-learning
