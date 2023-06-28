@@ -3,7 +3,7 @@ This project is an implementation of the solved version of the game [Tower of Ha
 
 
 ## Value Iteration
-![V_{i+1}(s)=\max_{a}\sum _{s'}T_{a}(s,s')[R_{a}(s,s')+\gamma V_{i}(s')]](http://www.sciweavers.org/tex2img.php?eq=1%2Bsin%28mc%5E2%29&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=)
+<img src="https://latex.codecogs.com/svg.image?\large&space;\bg{white}&space;V_{i&plus;1}(s)=\max_{a}\sum&space;_{s'}T_{a}(s,s')[R_{a}(s,s')&plus;\gamma&space;V_{i}(s')]"/>
 In value iteration, the agent knows the parameters of the MDP (especially the transition model $T$ and the reward function $R$).
 
 ## Q-learning
